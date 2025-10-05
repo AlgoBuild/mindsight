@@ -4,6 +4,7 @@ from flask import (
 from werkzeug.exceptions import abort
 from app.auth import login_required
 from app.db import get_db
+from app.gemini import call_gemini_api
 
 bp = Blueprint('entries', __name__, url_prefix='/entries')
 
@@ -21,10 +22,13 @@ def add():
         if error is not None:
             flash(error)
         else:
+            # Call Gemini API to analyze entry
+            analysis = call_gemini_api(text)
+            
             db = get_db()
             db.execute(
-                'INSERT INTO entries (user_id, text) VALUES (?, ?)',
-                (g.user['id'], text)
+                'INSERT INTO entries (user_id, text, mood, reflection) VALUES (?, ?, ?, ?)',
+                (g.user['id'], text, analysis['mood'], analysis['reflection'])
             )
             db.commit()
             flash('Entry saved successfully!')
