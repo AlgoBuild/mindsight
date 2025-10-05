@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}My Entries{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>My Journal Entries</h2>
+    <a href="{{ url_for('entries.add') }}" class="btn btn-primary">+ New Entry</a>
+</div>
+
+{% if entries %}
+    {% for entry in entries %}
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-subtitle mb-2 text-muted">
+                {{ entry['timestamp'] }}
+                {% if entry['mood'] %}
+                    <span class="badge bg-info">{{ entry['mood'] }}</span>
+                {% endif %}
+            </h5>
+            <p class="card-text">{{ entry['text'] }}</p>
+            {% if entry['reflection'] %}
+            <div class="alert alert-light mt-3">
+                <strong>💭 AI Reflection:</strong> {{ entry['reflection'] }}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+{% else %}
+    <div class="alert alert-info">
+        <p class="mb-0">No entries yet. <a href="{{ url_for('entries.add') }}">Create your first entry!</a></p>
+    </div>
+{% endif %}
+{% endblock %}

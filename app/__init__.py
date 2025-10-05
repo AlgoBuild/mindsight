@@ -32,6 +32,10 @@ def create_app(test_config=None):
     from . import auth
     app.register_blueprint(auth.bp)
     
+    # Register entries blueprint
+    from . import entries
+    app.register_blueprint(entries.bp)
+    
     # Simple home route
     @app.route('/')
     def index():
