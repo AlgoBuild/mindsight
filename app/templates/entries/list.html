@@ -13,7 +13,7 @@
     <div class="card mb-3">
         <div class="card-body">
             <h5 class="card-subtitle mb-2 text-muted">
-                {{ entry['timestamp'] }}
+                📅 <span class="local-time" data-utc="{{ entry['timestamp'] }}">{{ entry['timestamp'] }}</span>
                 {% if entry['mood'] %}
                     <span class="badge bg-info">{{ entry['mood'] }}</span>
                 {% endif %}
@@ -32,4 +32,29 @@
         <p class="mb-0">No entries yet. <a href="{{ url_for('entries.add') }}">Create your first entry!</a></p>
     </div>
 {% endif %}
+
+<script>
+    // Convert all UTC timestamps to user's local timezone
+    document.addEventListener('DOMContentLoaded', function() {
+        const timeElements = document.querySelectorAll('.local-time');
+        
+        timeElements.forEach(function(element) {
+            const utcTime = element.getAttribute('data-utc');
+            
+            // Parse UTC time and convert to local
+            const date = new Date(utcTime + ' UTC');
+            
+            // Format: "Oct 5, 2025, 10:30 PM"
+            const options = {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            };
+            
+            element.textContent = date.toLocaleString(undefined, options);
+        });
+    });
+</script>
 {% endblock %}
