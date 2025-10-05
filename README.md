@@ -5,7 +5,7 @@ Full-stack personal journal leveraging the Gemini API. It instantly analyzes dia
 ## Features
 - 📝 Daily journal entries with timestamps
 - 🤖 AI-powered mood extraction using Gemini API
-- 🔒 Privacy-first: local storage with encrypted entries at rest
+- 💾 Local SQLite storage
 
 
 ## Tech Stack
@@ -13,7 +13,6 @@ Full-stack personal journal leveraging the Gemini API. It instantly analyzes dia
 - **Database**: SQLite
 - **Frontend**: HTML/CSS + Bootstrap
 - **AI**: Google Gemini 2.5 Flash API
-- **Encryption**: Fernet (symmetric encryption)
 
 ## Setup Instructions
 Coming soon...
