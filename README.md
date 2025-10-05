@@ -4,7 +4,7 @@ Full-stack personal journal leveraging the Gemini API. It instantly analyzes dia
 
 ## Features
 - 📝 Daily journal entries with timestamps
-- 🤖 AI-powered mood extraction using Gemini API
+- 🤖 AI-powered mood extraction and suggestions using Gemini API
 - 💾 Local SQLite storage
 
 
