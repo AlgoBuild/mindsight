@@ -179,13 +179,10 @@ mindsight/
 
 ## 🤖 AI Integration
 
-The app uses **Google Gemini 2.0 Flash** for:
+The app uses **Google Gemini 2.5 Flash** for:
 - **Mood Detection**: Analyzes emotional tone (happy, sad, anxious, etc.)
 - **Reflections**: Generates personalized, supportive insights
 - **Privacy Note**: ⚠️ Free tier stores data. Avoid sensitive personal information.
-
-
-API calls are made via REST API with error handling and retries.
 
 ## 🌐 Deployment (PythonAnywhere)
 
@@ -229,6 +226,17 @@ This is my final project for **CS50's Introduction to Computer Science** (2025).
 - ✅ Comprehensive testing
 - ✅ Clean, documented code
 - ✅ README with setup instructions
+
+## 🚀 Future Improvements
+
+Planned features for future versions:
+
+- 🔑 **Change Password** - Allow users to update their password
+- 🗑️ **Delete Account** - Permanently remove account and all data
+- ✏️ **Edit Entries** - Modify past journal entries (complete CRUD)
+- 📥 **Export Data** - Download journal entries as PDF or JSON
+- 📧 **Email Verification** - Verify email addresses during registration
+- 🔐 **Encryption at Rest** - Encrypt journal entries in database for enhanced privacy
 
 
 ## 🙏 Acknowledgments
