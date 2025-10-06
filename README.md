@@ -2,6 +2,7 @@
 
 A full-stack personal journaling application with AI-powered mood analysis and insights. Built with Flask and Google Gemini API, Mindsight helps you track your emotional journey and gain deeper self-awareness through intelligent reflections.
 
+**Live Demo**: https://jubilantcapybara.pythonanywhere.com
 **Video Demo**: [Coming soon]
 
 ## ✨ Features
