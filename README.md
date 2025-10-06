@@ -36,7 +36,7 @@ A full-stack personal journaling application with AI-powered mood analysis and i
 - **Database**: SQLite3
 - **Frontend**: HTML5, CSS3, Bootstrap 5.3
 - **Icons**: Bootstrap Icons
-- **AI**: Google Gemini 2.0 Flash API
+- **AI**: Google Gemini 2.5 Flash API
 - **Testing**: pytest
 - **Deployment**: PythonAnywhere (web hosting)
 
