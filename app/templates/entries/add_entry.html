@@ -4,18 +4,41 @@
 
 {% block content %}
 <div class="row justify-content-center">
-    <div class="col-md-8">
-        <h2>New Journal Entry</h2>
-        <form method="post">
-            <div class="mb-3">
-                <label for="text" class="form-label">How are you feeling today?</label>
-                <textarea class="form-control" id="text" name="text" rows="10" 
-                          placeholder="Write your thoughts here..." required></textarea>
-                <div class="form-text">Your entry will be analyzed by AI for mood and reflections.</div>
+    <div class="col-md-10 col-lg-8">
+        <div class="card shadow-sm">
+            <div class="card-body p-4">
+                <h2 class="mb-4">
+                    <i class="bi bi-journal-plus"></i> New Journal Entry
+                </h2>
+                
+                <form method="post">
+                    <div class="mb-3">
+                        <label for="text" class="form-label">
+                            <strong>How are you feeling today?</strong>
+                        </label>
+                        <textarea class="form-control entry-textarea" 
+                                  id="text" 
+                                  name="text" 
+                                  rows="12" 
+                                  placeholder="Write your thoughts here... Express yourself freely. The AI will analyze your mood and provide supportive reflections."
+                                  required
+                                  autofocus></textarea>
+                        <div class="form-text">
+                            <i class="bi bi-lightbulb"></i> Your entry will be analyzed by AI for mood insights and personalized reflections.
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between">
+                        <a href="{{ url_for('entries.list') }}" class="btn btn-outline-secondary">
+                            <i class="bi bi-arrow-left"></i> Cancel
+                        </a>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-save"></i> Save Entry
+                        </button>
+                    </div>
+                </form>
             </div>
-            <button type="submit" class="btn btn-primary">Save Entry</button>
-            <a href="{{ url_for('entries.list') }}" class="btn btn-secondary">Cancel</a>
-        </form>
+        </div>
     </div>
 </div>
 {% endblock %}

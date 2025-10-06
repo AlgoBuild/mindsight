@@ -31,7 +31,7 @@ def add():
                 (g.user['id'], text, analysis['mood'], analysis['reflection'])
             )
             db.commit()
-            flash('Entry saved successfully!')
+            flash('Entry saved successfully!', 'success')
             return redirect(url_for('entries.list'))
 
     return render_template('entries/add_entry.html')
@@ -50,3 +50,27 @@ def list():
     ).fetchall()
     
     return render_template('entries/list.html', entries=entries)
+
+@bp.route('/<int:id>/delete', methods=('POST',))
+@login_required
+def delete(id):
+    """Delete a journal entry."""
+    db = get_db()
+    
+    # Check if entry exists and belongs to current user
+    entry = db.execute(
+        'SELECT id, user_id FROM entries WHERE id = ?', (id,)
+    ).fetchone()
+    
+    if entry is None:
+        abort(404, f"Entry id {id} doesn't exist.")
+    
+    if entry['user_id'] != g.user['id']:
+        abort(403)
+    
+    # Delete the entry
+    db.execute('DELETE FROM entries WHERE id = ?', (id,))
+    db.commit()
+    
+    flash('Entry deleted successfully!', 'success')
+    return redirect(url_for('entries.list'))

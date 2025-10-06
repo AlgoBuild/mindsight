@@ -4,32 +4,89 @@
 
 {% block content %}
 <div class="d-flex justify-content-between align-items-center mb-4">
-    <h2>My Journal Entries</h2>
-    <a href="{{ url_for('entries.add') }}" class="btn btn-primary">+ New Entry</a>
+    <h2>📔 My Journal Entries</h2>
+    <a href="{{ url_for('entries.add') }}" class="btn btn-primary">
+        <i class="bi bi-plus-circle"></i> New Entry
+    </a>
 </div>
 
 {% if entries %}
-    {% for entry in entries %}
-    <div class="card mb-3">
-        <div class="card-body">
-            <h5 class="card-subtitle mb-2 text-muted">
-                📅 <span class="local-time" data-utc="{{ entry['timestamp'] }}">{{ entry['timestamp'] }}</span>
-                {% if entry['mood'] %}
-                    <span class="badge bg-info">{{ entry['mood'] }}</span>
-                {% endif %}
-            </h5>
-            <p class="card-text">{{ entry['text'] }}</p>
-            {% if entry['reflection'] %}
-            <div class="alert alert-light mt-3">
-                <strong>💭 AI Reflection:</strong> {{ entry['reflection'] }}
+    <div class="row">
+        {% for entry in entries %}
+        <div class="col-12 mb-3">
+            <div class="card shadow-sm hover-shadow">
+                <div class="card-body">
+                    <!-- Header with timestamp and mood -->
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <h6 class="text-muted mb-0">
+                            <i class="bi bi-calendar3"></i> 
+                            <span class="local-time" data-utc="{{ entry['timestamp'] }}">{{ entry['timestamp'] }}</span>
+                        </h6>
+                        <div>
+                            {% if entry['mood'] %}
+                                <span class="badge bg-info mood-badge">
+                                    <i class="bi bi-emoji-smile"></i> {{ entry['mood'] }}
+                                </span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <!-- Entry text -->
+                    <p class="card-text entry-text">{{ entry['text'] }}</p>
+                    
+                    <!-- AI Reflection -->
+                    {% if entry['reflection'] %}
+                    <div class="alert alert-light reflection-box mt-3 mb-3">
+                        <strong>💭 AI Reflection:</strong> 
+                        <span class="reflection-text">{{ entry['reflection'] }}</span>
+                    </div>
+                    {% endif %}
+                    
+                    <!-- Actions -->
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="btn btn-sm btn-outline-danger" 
+                                data-bs-toggle="modal" 
+                                data-bs-target="#deleteModal{{ entry['id'] }}">
+                            <i class="bi bi-trash"></i> Delete
+                        </button>
+                    </div>
+                </div>
             </div>
-            {% endif %}
         </div>
+        
+        <!-- Delete Confirmation Modal -->
+        <div class="modal fade" id="deleteModal{{ entry['id'] }}" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Confirm Delete</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to delete this entry?</p>
+                        <p class="text-muted small">This action cannot be undone.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <form method="post" action="{{ url_for('entries.delete', id=entry['id']) }}" style="display: inline;">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 {% else %}
-    <div class="alert alert-info">
-        <p class="mb-0">No entries yet. <a href="{{ url_for('entries.add') }}">Create your first entry!</a></p>
+    <div class="text-center py-5">
+        <div class="empty-state">
+            <i class="bi bi-journal-text" style="font-size: 4rem; color: #6c757d;"></i>
+            <h4 class="mt-3">No entries yet</h4>
+            <p class="text-muted">Start journaling to track your mood and thoughts.</p>
+            <a href="{{ url_for('entries.add') }}" class="btn btn-primary mt-3">
+                <i class="bi bi-plus-circle"></i> Create Your First Entry
+            </a>
+        </div>
     </div>
 {% endif %}
 
@@ -40,11 +97,8 @@
         
         timeElements.forEach(function(element) {
             const utcTime = element.getAttribute('data-utc');
-            
-            // Parse UTC time and convert to local
             const date = new Date(utcTime + ' UTC');
             
-            // Format: "Oct 5, 2025, 10:30 PM"
             const options = {
                 year: 'numeric',
                 month: 'short',
