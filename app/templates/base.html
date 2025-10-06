@@ -158,6 +158,17 @@
             border-radius: 20px;
             background-color: var(--primary-color);
             color: white;
+            font-weight: 500;
+        }
+        
+        [data-theme="light"] .mood-badge {
+            background-color: #0d9488;
+            color: white;
+        }
+        
+        [data-theme="dark"] .mood-badge {
+            background-color: #14b8a6;
+            color: #0f172a;
         }
         
         .empty-state {
@@ -178,12 +189,34 @@
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             border: none;
             color: white;
+            font-weight: 500;
+        }
+        
+        [data-theme="light"] .btn-primary {
+            background: linear-gradient(135deg, #0f766e, #0e7490);
+            color: white;
+        }
+        
+        [data-theme="dark"] .btn-primary {
+            background: linear-gradient(135deg, #14b8a6, #22d3ee);
+            color: #0f172a;
+            font-weight: 600;
         }
         
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(20, 184, 166, 0.3);
             opacity: 0.9;
+        }
+        
+        [data-theme="light"] .btn-primary:hover {
+            background: linear-gradient(135deg, #0d9488, #0891b2);
+            color: white;
+        }
+        
+        [data-theme="dark"] .btn-primary:hover {
+            background: linear-gradient(135deg, #2dd4bf, #38bdf8);
+            color: #0f172a;
         }
 
         .btn-outline-danger {
