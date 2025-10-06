@@ -4,7 +4,7 @@ A full-stack personal journaling application with AI-powered mood analysis and i
 
 **Live Demo**: https://jubilantcapybara.pythonanywhere.com
 
-**Video Demo**: [Coming soon]
+**Video Demo**: https://youtu.be/MnddC-WRcwU
 
 ## ✨ Features
 
