@@ -10,7 +10,7 @@ A full-stack personal journaling application with AI-powered mood analysis and i
 
 ### Core Functionality
 - 📝 **Journal Entries** - Write and save personal diary entries with timestamps
-- 🤖 **AI Mood Analysis** - Automatic mood detection using Google Gemini 2.5 Flash API
+- 🤖 **AI Mood Classification** - Automatic mood detection using Google Gemini 2.5 Flash API
 - 💭 **AI Reflections** - Personalized, thought-provoking insights for each entry
 - 📋 **Entry Management** - View, browse, and delete your journal entries
 - 🔐 **User Authentication** - Secure registration and login system
