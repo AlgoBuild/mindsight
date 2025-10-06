@@ -1,5 +1,6 @@
 import os
-from flask import Flask
+from flask import Flask, render_template, redirect, url_for
+from flask import g
 
 def create_app(test_config=None):
     """Create and configure the Flask application."""
@@ -36,9 +37,14 @@ def create_app(test_config=None):
     from . import entries
     app.register_blueprint(entries.bp)
     
-    # Simple home route
+    # Home route
     @app.route('/')
     def index():
-        return 'Mindsight - Smart Journal'
+        """Homepage - redirect based on login status."""
+        if g.user:
+            # Logged in users go to their entries
+            return redirect(url_for('entries.list'))
+        # Not logged in users see landing page
+        return render_template('index.html')
     
     return app

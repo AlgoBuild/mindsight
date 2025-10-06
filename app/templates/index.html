@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="landing-page">
+    <div class="container">
+        <div class="hero-content text-center">
+            <h1 class="hero-title">Mindsight</h1>
+            <p class="hero-subtitle">Journal with AI insights</p>
+            
+            <div class="hero-buttons">
+                <a href="{{ url_for('auth.register') }}" class="btn-custom btn-primary-custom">
+                    Get Started
+                </a>
+                <a href="{{ url_for('auth.login') }}" class="btn-custom btn-secondary-custom">
+                    Log In
+                </a>
+            </div>
+            
+            <div class="features-row">
+                <div class="feature-item">
+                    <i class="bi bi-robot feature-icon"></i>
+                    <span class="feature-label">AI-powered mood analysis</span>
+                </div>
+                <div class="feature-divider"></div>
+                <div class="feature-item">
+                    <i class="bi bi-lock feature-icon"></i>
+                    <span class="feature-label">Private and secure</span>
+                </div>
+                <div class="feature-divider"></div>
+                <div class="feature-item">
+                    <i class="bi bi-clock-history feature-icon"></i>
+                    <span class="feature-label">Track your journey</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .landing-page {
+        height: calc(100vh - 120px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to bottom, #ffffff 0%, #f5f5f7 100%);
+    }
+
+    .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .hero-title {
+        font-size: 4.5rem;
+        font-weight: 600;
+        letter-spacing: -0.015em;
+        color: #1d1d1f;
+        margin-bottom: 0.5rem;
+        line-height: 1.1;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: #86868b;
+        margin-bottom: 2.5rem;
+        letter-spacing: 0.004em;
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin-bottom: 3rem;
+    }
+
+    .btn-custom {
+        font-size: 1.0625rem;
+        font-weight: 400;
+        padding: 0.75rem 1.75rem;
+        border-radius: 980px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        letter-spacing: -0.01em;
+        display: inline-block;
+    }
+
+    .btn-primary-custom {
+        background: #0071e3;
+        color: white;
+    }
+
+    .btn-primary-custom:hover {
+        background: #0077ed;
+        transform: scale(1.02);
+        box-shadow: 0 4px 16px rgba(0, 113, 227, 0.3);
+        color: white;
+    }
+
+    .btn-secondary-custom {
+        background: transparent;
+        color: #0071e3;
+        border: 1px solid #0071e3;
+    }
+
+    .btn-secondary-custom:hover {
+        background: #0071e3;
+        color: white;
+        transform: scale(1.02);
+    }
+
+    .features-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+    }
+
+    .feature-item {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .feature-icon {
+        font-size: 1.5rem;
+        color: #0071e3;
+    }
+
+    .feature-label {
+        font-size: 0.9375rem;
+        color: #6e6e73;
+        font-weight: 400;
+        letter-spacing: -0.01em;
+    }
+
+    .feature-divider {
+        width: 1px;
+        height: 40px;
+        background: #d2d2d7;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .hero-title {
+            font-size: 3rem;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+        }
+        
+        .hero-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .btn-custom {
+            width: 200px;
+        }
+        
+        .feature-divider {
+            display: none;
+        }
+        
+        .features-row {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+    }
+</style>
+{% endblock %}
