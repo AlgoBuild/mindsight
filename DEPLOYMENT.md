@@ -227,4 +227,3 @@ PythonAnywhere free accounts have:
 
 ---
 
-**Deployment completed!** Your Mindsight journal is now live! 🚀

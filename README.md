@@ -6,33 +6,33 @@ A full-stack personal journaling application with AI-powered mood analysis and i
 
 **Video Demo**: https://youtu.be/MnddC-WRcwU
 
-## ✨ Features
+## Features
 
 ### Core Functionality
-- 📝 **Journal Entries** - Write and save personal diary entries with timestamps
-- 🤖 **AI Mood Classification** - Automatic mood detection using Google Gemini 2.5 Flash API
-- 💭 **AI Reflections** - Personalized, thought-provoking insights for each entry
-- 📋 **Entry Management** - View, browse, and delete your journal entries
-- 🔐 **User Authentication** - Secure registration and login system
-- 👥 **Multi-User Support** - Each user has their own private journal
+- Journal entries with timestamps
+- AI mood classification using Google Gemini 2.5 Flash API
+- AI reflections for each entry
+- Entry management: view, browse, delete
+- User authentication
+- Multi-user support with private journals
 
 ### User Experience
-- 🎨 **Modern UI** - Clean, minimalist design with gradient accents
-- 🌓 **Light/Dark Themes** - Toggle between comfortable viewing modes
-- 🎨 **Turquoise Color Scheme** - Calming color palette perfect for journaling
-- 📱 **Responsive Design** - Works seamlessly on desktop and mobile
-- 🌍 **Timezone Support** - Automatic conversion of timestamps to local time
-- 🏷️ **Mood Badges** - Visual mood indicators on each entry
-- 💬 **Flash Messages** - Clear feedback for user actions
+- Modern, minimalist UI with gradient accents
+- Light/Dark theme toggle
+- Turquoise color scheme
+- Responsive design for desktop and mobile
+- Timezone-aware timestamps (automatic local conversion)
+- Mood badges on entries
+- Flash messages for user feedback
 
 ### Technical Features
-- 🔒 **Password Security** - Hashed passwords using Werkzeug
-- 💾 **SQLite Database** - Lightweight, file-based storage
-- 🧪 **Test Suite** - 23 comprehensive tests with 100% pass rate
-- 🎯 **RESTful Routes** - Clean URL structure
-- 📦 **Modular Architecture** - Blueprints for authentication and entries
+- Secure password hashing (Werkzeug)
+- SQLite database (file-based storage)
+- Test suite (23 tests, 100% pass rate)
+- RESTful routes
+- Modular architecture with blueprints (auth, entries)
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Backend**: Flask 3.0 (Python)
 - **Database**: SQLite3
@@ -42,13 +42,13 @@ A full-stack personal journaling application with AI-powered mood analysis and i
 - **Testing**: pytest
 - **Deployment**: PythonAnywhere (web hosting)
 
-## 📋 Prerequisites
+## Prerequisites
 
 - Python 3.10 or higher
 - Google Gemini API key (free from [Google AI Studio](https://aistudio.google.com/apikey))
 - pip (Python package manager)
 
-## 🚀 Setup Instructions
+## Setup Instructions
 
 ### 1. Clone the repository
 
@@ -106,7 +106,7 @@ flask run
 
 Visit `http://127.0.0.1:5000` in your browser.
 
-## 🧪 Running Tests
+## Running Tests
 
 ```bash
 # Run all tests
@@ -114,9 +114,9 @@ python -m pytest -v
 
 ```
 
-All 23 tests should pass! ✅
+All 23 tests should pass!
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 mindsight/
@@ -143,7 +143,7 @@ mindsight/
 └── README.md
 ```
 
-## 🎯 Usage
+## Usage
 
 ### First Time Setup
 1. Register a new account
@@ -170,23 +170,23 @@ mindsight/
 - Theme preference saved in browser
 - Works across all pages
 
-## 🔐 Security Features
+## Security Features
 
-- ✅ Password hashing with Werkzeug
-- ✅ Session-based authentication
-- ✅ User isolation (can only see own entries)
-- ✅ Environment variables for secrets
-- ✅ SQL injection prevention (parameterized queries)
-- ✅ Login required decorator for protected routes
+- Password hashing with Werkzeug
+- Session-based authentication
+- User isolation (can only see own entries)
+- Environment variables for secrets
+- SQL injection prevention (parameterized queries)
+- Login required decorator for protected routes
 
-## 🤖 AI Integration
+## AI Integration
 
 The app uses **Google Gemini 2.5 Flash** for:
 - **Mood Detection**: Analyzes emotional tone (happy, sad, anxious, etc.)
 - **Reflections**: Generates personalized, supportive insights
-- **Privacy Note**: ⚠️ Free tier stores data. Avoid sensitive personal information.
+- **Privacy Note**: Free tier stores data. Avoid sensitive personal information.
 
-## 🌐 Deployment (PythonAnywhere)
+## Deployment (PythonAnywhere)
 
 See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions.
 
@@ -199,7 +199,7 @@ Quick steps:
 6. Initialize database
 7. Reload web app
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Database errors
 ```bash
@@ -216,32 +216,32 @@ pip install -r requirements.txt
 - Verify quota at [Google AI Studio](https://aistudio.google.com/)
 - Check internet connection
 
-## 📝 CS50 Final Project
+## CS50 Final Project
 
 This is my final project for **CS50's Introduction to Computer Science** (2025).
 
 **Project Requirements Met:**
-- ✅ Web-based application
-- ✅ Uses Python, Flask, SQL
-- ✅ Integrates external API (Gemini)
-- ✅ User authentication
-- ✅ Comprehensive testing
-- ✅ Clean, documented code
-- ✅ README with setup instructions
+- Web-based application
+- Uses Python, Flask, SQL
+- Integrates external API (Gemini)
+- User authentication
+- Comprehensive testing
+- Clean, documented code
+- README with setup instructions
 
-## 🚀 Future Improvements
+## Future Improvements
 
 Planned features for future versions:
 
-- 🔑 **Change Password** - Allow users to update their password
-- 🗑️ **Delete Account** - Permanently remove account and all data
-- ✏️ **Edit Entries** - Modify past journal entries (complete CRUD)
-- 📥 **Export Data** - Download journal entries as PDF or JSON
-- 📧 **Email Verification** - Verify email addresses during registration
-- 🔐 **Encryption at Rest** - Encrypt journal entries in database for enhanced privacy
+- Change Password - Allow users to update their password
+- Delete Account - Permanently remove account and all data
+- Edit Entries - Modify past journal entries (complete CRUD)
+- Export Data - Download journal entries as PDF or JSON
+- Email Verification - Verify email addresses during registration
+- Encryption at Rest - Encrypt journal entries in database for enhanced privacy
 
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **CS50 Staff** - For an incredible course
 - **Google** - For Gemini API access
@@ -249,15 +249,15 @@ Planned features for future versions:
 - **Bootstrap** - For UI components
 
 
-## 📄 License
+## License
 
 This project is open source and available under the MIT License.
 
-## 👤 Author
+## Author
 
 **Nhi Mai**
 - GitHub: [@AlgoBuild](https://github.com/AlgoBuild)
 
 ---
 
-Made with ❤️ for CS50 Final Project 2025
+Made with love for CS50 Final Project 2025
