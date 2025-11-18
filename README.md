@@ -27,7 +27,6 @@ Video Demo: https://youtu.be/MnddC-WRcwU
 ## Prerequisites
 
 - Python 3.10+
-- pip
 - Google Gemini API key (https://aistudio.google.com/apikey)
 
 ## Quick Start
